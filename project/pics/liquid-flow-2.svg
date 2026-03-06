@@ -1,0 +1,11 @@
+<svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="liquid-flow">
+<g id="liquid">
+<rect id="fluid" x="50" y="100" width="50" height="50" fill="black"/>
+</g>
+<circle id="fluid-wave-4" cx="19.5" cy="99.5" r="12.5" fill="black"/>
+<circle id="fluid-wave-3" cx="19.5" cy="99.5" r="12.5" fill="black"/>
+<path id="fluid-wave-2" d="M32 99.5C32 106.404 26.4036 112 19.5 112C12.5964 112 7 106.404 7 99.5C7 92.5964 12.5964 87 19.5 87C26.4036 87 32 92.5964 32 99.5Z" fill="black"/>
+<circle id="fluid-wave-1" cx="19.5" cy="99.5" r="12.5" fill="black"/>
+</g>
+</svg>

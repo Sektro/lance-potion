@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanuman:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="scripts/main.js" defer></script>
+    <title>Potion Inc.</title>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div id="hamburger-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      
+      <a href="index.html">
+        <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg" id="logo-svg">
+            <defs>
+              <mask id="mask1">
+                  <circle cx="25" cy="25" r="25" fill="white" />
+              </mask>
+              <mask id="mask2">
+                <rect id="potion-inc-logo-white" x="0" y="0" width="50" height="50" fill="url(#pattern0_1_2)"/>
+            </mask>
+            </defs>
+            <g id="liquid" mask="url(#mask1)">
+              <rect id="fluid" x="0" y="0" width="50" height="50"/>
+              <g id="fluid-bubbles">
+                <circle id="fluid-bubble-1" cx="20" cy="5" r="3" stroke-width="2" fill="none"/>
+                <circle id="fluid-bubble-2" cx="10" cy="5" r="3" stroke-width="2" fill="none"/>
+                <circle id="fluid-bubble-3" cx="40" cy="5" r="3" stroke-width="2" fill="none"/>
+              </g>
+            </g>
+            <g id="logo-masked-base" mask="url(#mask2)">
+              <rect x="0" y="0" width="50" height="50"/>
+            </g>
+            <g id="logo-masked" mask="url(#mask2)">
+              <rect id="fluid" x="0" y="0" width="50" height="50"/>
+            </g>
+            <pattern id="pattern0_1_2" patternContentUnits="objectBoundingBox" width="1" height="1">
+              <use xlink:href="#image0_1_2" transform="scale(0.005)"/>
+            </pattern>
+            <image id="image0_1_2" data-name="potion-inc-logo-white.png" width="200" height="200" xlink:href="data:image/png;base64,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"/>
+        </svg>
+      </a>
+
+      <div id="darkmode-toggle-container">
+        <input type="checkbox" id="darkmode-toggle">
+        <label for="darkmode-toggle" id="darkmode-toggle-label">
+          <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="moon">
+            <path d="M3.32031 11.6835C3.32031 16.6541 7.34975 20.6835 12.3203 20.6835C16.1075 20.6835 19.3483 18.3443 20.6768 15.032C19.6402 15.4486 18.5059 15.6834 17.3203 15.6834C12.3497 15.6834 8.32031 11.654 8.32031 6.68342C8.32031 5.50338 8.55165 4.36259 8.96453 3.32996C5.65605 4.66028 3.32031 7.89912 3.32031 11.6835Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="sun">
+            <path d="M12 3V4M12 20V21M4 12H3M6.31412 6.31412L5.5 5.5M17.6859 6.31412L18.5 5.5M6.31412 17.69L5.5 18.5001M17.6859 17.69L18.5 18.5001M21 12H20M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </label>
+      </div>
+    </nav>
+    <div class="off-screen-menu">
+        <ul>
+          <li><a href="#">home</a></li>
+          <li><a href="#">products</a></li>
+          <li><a href="#">about</a></li>
+          <li><a href="#">locations</a></li>
+        </ul>
+    </div>
+  </header>
+  <main class="products-main">
+    <div class="card">
+      asd
+    </div>
+    <div class="card">
+      asd
+    </div>
+    <div class="card">
+      asd
+    </div>
+  </main>
+  <footer>
+  </footer>
+</body>
+</html>

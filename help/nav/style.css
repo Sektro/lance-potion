@@ -1,0 +1,123 @@
+/* resetting browser default settings: */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: darkslategray;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header a {
+    text-decoration: none;
+}
+
+header {
+    padding: 0 20px;
+    background-color: black;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#brand {
+    font-weight: bold;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+#brand a {
+    color: green;
+}
+
+
+ul {
+    list-style: none; /* no bulletpoints */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+ul a {
+    color: white;
+}
+ul a {
+    padding: 5px;
+    margin-left: 10px;
+}
+ul li:hover {
+    padding: 5px;
+    margin-left: 10px;
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+#login, #signup {
+    border-radius: 5px;
+    padding: 5px, 8px;
+}
+#login {
+    border: 1px solid blue;
+}
+#signup {
+    border: 1px solid red;
+}
+#login a {
+    color: blue;
+}
+#signup a {
+    color: red;
+}
+
+
+
+#hamburger-icon {
+    margin: auto 0;
+    display: none;
+    cursor: pointer;
+}
+#hamburger-icon div {
+    width: 35px;
+    height: 3px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+.open .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-6px, 6px); 
+    transform: rotate(-45deg) translate(-6px, 6px);
+}
+.open .bar2 {
+    opacity: 0;
+}
+.open .bar3 {
+    -webkit-transform: rotate(45deg) translate(-6px, 8px); 
+    transform: rotate(45deg) translate(-6px, 8px);
+}
+.open .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    height: calc(100vh - 50px);
+    width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    header nav {
+        display: none;
+    }
+    #hamburger-icon {
+        display: block;
+    }
+}

@@ -1,0 +1,269 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    --text-color: rgb(15, 15, 15);
+    --background-c: rgb(240,240,240);
+    --liquid-color: rgb(15, 15, 15);
+    --contrast-to-liquid-color: rgb(240,240,240);
+    --test-bc: white;
+    --navbar-height: 50px;
+}
+.darkmode {
+    --text-color: rgb(240, 240, 240);
+    --background-c: rgb(15, 15, 15);
+    --liquid-color: rgb(240,240,240);
+    --contrast-to-liquid-color: rgb(15, 15, 15);
+    --test-bc: black;
+}
+
+
+
+
+
+
+
+
+
+
+body {
+    /*background-image: url("https://www.hindustantimes.com/ht-img/img/2023/09/20/1600x900/Jujutsu_Kaisen_1690482062987_1695209581778.png");*/
+    background-color: var(--test-bc);
+    font-family: 'Hanuman', sans-serif;
+    display: grid;
+}
+
+
+/*----NAVBAR----*/
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.6);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: var(--navbar-height);
+    position: fixed;
+    width: 100%;
+    backdrop-filter: blur(5px);
+}
+
+/*hamburger*/
+#hamburger-icon {
+        cursor: pointer;
+        z-index: 10;
+    height: 50px;
+    width: 40px;
+    justify-self: left;
+    margin-left: 10px;
+    position: relative;
+}
+#hamburger-icon span {
+    height: 5px;
+    width: 100%;
+    background-color: var(--text-color);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s ease;
+}
+#hamburger-icon span:nth-child(1) {
+    top: 25%;
+}
+#hamburger-icon span:nth-child(3) {
+    top: 75%;
+}
+#hamburger-icon.open span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+#hamburger-icon.open span:nth-child(2) {
+    opacity: 0;
+}
+#hamburger-icon.open span:nth-child(3) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/*logo*/
+.navbar a {
+    justify-self: center;
+    max-height: 50px;
+}
+#logo {
+    max-height: 50px;
+    width: auto;
+}
+#logo-svg {
+    z-index: 15;
+}
+#logo {
+    position: fixed;
+    justify-self: center;
+    z-index: -10;
+}
+#liquid {
+    fill: var(--liquid-color);
+}
+#fluid, #fluid-bubble-1, #fluid-bubble-2, #fluid-bubble-3 {
+    transform: translateY(100%);
+}
+#logo-svg:hover #fluid {
+    transform: translateY(0);
+    transition: 2s;
+}
+#logo-svg:hover #fluid-bubble-1 {
+    transform: translateY(-20px);
+    transition: 0.8s;
+    transition-delay: 1s;
+}
+#logo-svg:hover #fluid-bubble-2 {
+    transform: translateY(-20px);
+    transition: 0.8s;
+    transition-delay: 0.5s;
+}
+#logo-svg:hover #fluid-bubble-3 {
+    transform: translateY(-20px);
+    transition: 0.8s;
+    transition-delay: 1.2s;
+}
+#logo-masked {
+    fill: var(--contrast-to-liquid-color);
+}
+#fluid-bubble-1, #fluid-bubble-2, #fluid-bubble-3 {
+    stroke: var(--contrast-to-liquid-color);
+}
+#logo-masked-base {
+    fill: var(--liquid-color);
+}
+
+/*nightmode*/
+#darkmode-toggle-container {
+    width: auto;
+    height: auto;
+    justify-self: right;
+    align-self: center;
+    margin-right: 10px;
+}
+
+#darkmode-toggle {
+    width: 0;
+    height: 0;
+    display: none;
+}
+#darkmode-toggle:checked + #darkmode-toggle-label {
+    background: rgb(15, 15, 15);
+}
+#darkmode-toggle:checked + #darkmode-toggle-label:after {
+    left: 60px;
+    transform: translateX(-100%);
+    background: rgb(240, 240, 240);
+}
+#darkmode-toggle-label {
+    width: 60px;
+    height: 30px;
+    position: relative;
+    display: block;
+    background: rgb(240,240,240);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+#darkmode-toggle-label:after {
+    content: "";
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: rgb(15, 15, 15);
+    border-radius: 30px;
+    transition: 0.2s;
+}
+#darkmode-toggle-label:active:after {
+    width: 40px;
+}
+#darkmode-toggle-label svg{
+    width: 20px;
+    height: 30px;
+    top: 0px;
+    position: absolute;
+    z-index: 20;
+}
+#darkmode-toggle-label svg.sun {
+    left: 5px;
+    stroke: rgb(240, 240, 240);
+    transition: all 0.2s, visibility 0s;
+    visibility: visible;
+}
+#darkmode-toggle-label svg.moon {
+    left: 5px;
+    stroke: rgb(15, 15, 15);
+    transition: all 0.2s, visibility 0s;
+    visibility: hidden;
+}
+input:checked + #darkmode-toggle-label svg.sun {
+    visibility: hidden;
+    left: 35px;
+}
+input:checked + #darkmode-toggle-label svg.moon {
+    visibility: visible;
+    left: 35px;
+}
+
+
+/*OFF-SCREEN-MENU*/
+.off-screen-menu {
+    z-index: -1;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    max-width: min(300px,50%);
+    background-color: var(--background-c);
+    left: -300px;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    justify-content: center;
+    text-align: center;
+    font-size: 3rem;
+    transition: .3s ease;
+}
+.off-screen-menu ul {
+    list-style: none;
+}
+.off-screen-menu.open {
+    left: 0px;
+}
+.off-screen-menu a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+
+
+
+/*-------------PRODUCTS-------------*/
+.products-main {
+    margin-top: var(--navbar-height);
+    width: 80%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-self: center;
+    align-self: center;
+}
+.card {
+    margin: 0 auto;
+    padding: 2em;
+    width: 300px;
+    background: rgb(34, 0, 42);
+    text-align: center;
+    border-radius: 10px;
+}
+.card::after {
+    content: '';
+    position: absolute;
+}
